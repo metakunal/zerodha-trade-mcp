@@ -23,6 +23,7 @@ async function generateSession() {
   try {
     const response = await kc.generateSession(requestToken, apiSecret);
     kc.setAccessToken(response.access_token);
+    console.log(response.access_token);
     console.log("Session generated:", response);
   } catch (err) {
     console.error("Error generating session:", err);
